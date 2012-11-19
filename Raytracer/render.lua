@@ -55,7 +55,6 @@ if (...) then
             if intersection then
               currentObj = obj
               t = dst
-              --print('hit at ',t,'depth',depth, 'coef', reflectionCoef)
             end
           end    
           if not currentObj then break end
@@ -97,17 +96,8 @@ if (...) then
          ray.direction = ray.direction - normalAtHitPoint * reflection         
           
          depth = depth+1
-         --print('End of loop', t) 
         end
         
-        --[
-          --if x >= 272 and x <= 275 and y>=224 and y<= 230 then
-          --if pixel.r > 0 and pixel.g > 0 and pixel.b > 0 then
-            --print(('Color at (%d,%d)'):format(x,y),pixel)
-            --io.read()
-         -- end
-        --end
-        --]]
         scene.image:setPixel(x,y,pixel)    
       end
     end    
