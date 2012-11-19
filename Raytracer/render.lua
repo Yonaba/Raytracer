@@ -81,7 +81,7 @@ if (...) then
                 end
                 
                 if not inShadow then              
-                  pixel = pixel + LambertShade(currentObj.material, light.color, lightRay, normalAtHitPoint, reflectionCoef, x, y)
+                  pixel = pixel + LambertShade(currentObj.material, light.color, lightRay, normalAtHitPoint, reflectionCoef)
                   pixel = pixel + PhongShade(currentObj.material, ray, light.color, lightRay, normalAtHitPoint, reflectionCoef)                  
                 end
               end

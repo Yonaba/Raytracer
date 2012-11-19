@@ -21,21 +21,8 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 --]]
 
-local function LambertShade(material, lightColor, lightRay, normal, coef, x, y)
+local function LambertShade(material, lightColor, lightRay, normal, coef)
   local lambert = lightRay.direction:dot(normal) * coef
-  --local add =  lightColor * material.diffuse * lambert
-  --[[
-  if x == 95 and y  == 306 then 
-    print('lightColor',lightColor)
-    print('diffuse',material.diffuse)
-    print('Add', add)
-    print('Check',
-      (add.r == lambert*lightColor.r*material.diffuse.r) and
-      (add.g == lambert*lightColor.g*material.diffuse.g) and
-      (add.b == lambert*lightColor.b*material.diffuse.b))   
-    io.read()
-  end
-  --]]
   return lightColor * material.diffuse * lambert
 end
 
